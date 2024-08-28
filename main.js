@@ -5,6 +5,10 @@ const startCity = 'Poltava';
 
 const cityNameHTML = document.getElementById('city-name');
 const temperatureHTML = document.getElementById('temperature');
+const windSpeed = document.getElementById('wind-speed');
+const humidity = document.getElementById('humidity');
+const cloudscover = document.getElementById('cloudscover');
+const pressure = document.getElementById('pressure');
 
 const input = document.getElementById('input');
 const button = document.getElementById('button');
@@ -22,6 +26,10 @@ async function getData(city) {
 
   cityNameHTML.innerHTML = dataWeather.name;
   temperatureHTML.innerHTML = Math.round(dataWeather.main.temp) + '&#xb0';
+  windSpeed.innerHTML = dataWeather.wind.speed + ' km/h';
+  cloudscover.innerHTML = dataWeather.clouds.all + '%';
+  humidity.innerHTML = dataWeather.main.humidity + '%';
+  pressure.innerHTML = dataWeather.main.pressure * 0.75 + 'мм';
 
   input.value = '';
   console.log(dataWeather)

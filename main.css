@@ -83,3 +83,41 @@ body {
   font-weight: 500;
   line-height: 70px;
 }
+
+
+.weather-app-optional{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 20px 5px ;
+}
+
+.weather-app-info {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.weather-app-info-icon {
+  width: 30px;
+  height: 30px;
+}
+.weather-app-info-text {
+  display: flex;
+  flex-direction: column;
+}
+.weather-app-info-text-value {
+  color: #2c2c2c;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px;
+}
+.weather-app-info-text-undertext {
+  color: #535252;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
