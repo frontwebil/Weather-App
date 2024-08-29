@@ -34,7 +34,7 @@ async function getData(city) {
     loader.style.display = "none";
 
     if (dataWeather.weather[0].main == "Clear") {
-      imageWeather.src = imgUrl;
+      imageWeather.src =`"${imgUrl}"`;
     } else if (dataWeather.weather[0].main == "Rain") {
       imageWeather.src = ".public/weather-img/rain.svg";
     } else if (
