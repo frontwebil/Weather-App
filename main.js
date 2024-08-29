@@ -31,16 +31,16 @@ async function getData(city) {
   loader.style.display = 'none';
 
   if (dataWeather.weather[0].main == "Clear") {
-    imageWeather.src = 'weather-img/sun.svg';
+    imageWeather.src = '/weather-img/sun.svg';
   } 
   else if (dataWeather.weather[0].main == "Rain") {
-    imageWeather.src = 'weather-img/rain.svg';
+    imageWeather.src = '/weather-img/rain.svg';
   } 
   else if (dataWeather.weather[0].main == "Drizzle" || dataWeather.weather[0].main == "Mist") {
-    imageWeather.src = 'weather-img/drizzle.svg';
+    imageWeather.src = '/weather-img/drizzle.svg';
   }
   else if (dataWeather.weather[0].main == "Clouds") {
-    imageWeather.src = 'weather-img/cloudy.svg';
+    imageWeather.src = '/weather-img/cloudy.svg';
   }
 
   cityNameHTML.innerHTML = dataWeather.name;
