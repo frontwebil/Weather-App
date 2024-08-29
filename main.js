@@ -49,7 +49,7 @@ async function getData(city) {
     windSpeed.innerHTML = dataWeather.wind.speed + " km/h";
     cloudscover.innerHTML = dataWeather.clouds.all + "%";
     humidity.innerHTML = dataWeather.main.humidity + "%";
-    pressure.innerHTML = dataWeather.main.pressure * 0.75 + "мм";
+    pressure.innerHTML = dataWeather.main.pressure * 0.75 + "мм.рт.ст";
 
     input.value = "";
     console.log(dataWeather);
