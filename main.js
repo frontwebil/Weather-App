@@ -3,7 +3,6 @@ console.log(MY_API_KEY);
 const startCity = "Poltava";
 
 import imgUrl from './weather-img/sun.svg';
-console.log(imgUrl)
 
 const loader = document.getElementById("loader");
 const cityNameHTML = document.getElementById("city-name");
