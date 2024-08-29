@@ -2,27 +2,46 @@ const MY_API_KEY = import.meta.env.VITE_API_KEY;
 console.log(MY_API_KEY)
 const startCity = 'Poltava';
 
-
+const loader = document.getElementById('loader');
 const cityNameHTML = document.getElementById('city-name');
 const temperatureHTML = document.getElementById('temperature');
 const windSpeed = document.getElementById('wind-speed');
 const humidity = document.getElementById('humidity');
 const cloudscover = document.getElementById('cloudscover');
 const pressure = document.getElementById('pressure');
+const imageWeather = document.getElementById('image-weather');
+// src="weather-img/cloudy.svg"
 
 const input = document.getElementById('input');
 const button = document.getElementById('button');
 
 async function getData(city) {
+  loader.style.display = 'block';
   try{
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${MY_API_KEY}`
   );
   if (!response.ok) {
-    alert('Спробуйте знову та перевірте всі данні!')
+    input.value = '';
+    alert('Перевірте правильність написання!')
+    loader.style.display = 'none';
     throw new Error('Error HTTP: ' + response.status);
   }
   const dataWeather = await response.json();
+  loader.style.display = 'none';
+
+  if (dataWeather.weather[0].main == "Clear") {
+    imageWeather.src = 'weather-img/sun.svg';
+  } 
+  else if (dataWeather.weather[0].main == "Rain") {
+    imageWeather.src = 'weather-img/rain.svg';
+  } 
+  else if (dataWeather.weather[0].main == "Drizzle" || dataWeather.weather[0].main == "Mist") {
+    imageWeather.src = 'weather-img/drizzle.svg';
+  }
+  else if (dataWeather.weather[0].main == "Clouds") {
+    imageWeather.src = 'weather-img/cloudy.svg';
+  }
 
   cityNameHTML.innerHTML = dataWeather.name;
   temperatureHTML.innerHTML = Math.round(dataWeather.main.temp) + '&#xb0';
