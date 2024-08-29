@@ -2,7 +2,6 @@ const MY_API_KEY = import.meta.env.VITE_API_KEY;
 console.log(MY_API_KEY);
 const startCity = "Poltava";
 
-import imgUrl from './weather-img/sun.svg';
 
 const loader = document.getElementById("loader");
 const cityNameHTML = document.getElementById("city-name");
@@ -33,16 +32,16 @@ async function getData(city) {
     loader.style.display = "none";
 
     if (dataWeather.weather[0].main == "Clear") {
-      imageWeather.src =`url("${imgUrl}")`;
+      imageWeather.src ="/weather-img/sun.svg";
     } else if (dataWeather.weather[0].main == "Rain") {
-      imageWeather.src = ".public/weather-img/rain.svg";
+      imageWeather.src = "/weather-img/rain.svg";
     } else if (
       dataWeather.weather[0].main == "Drizzle" ||
       dataWeather.weather[0].main == "Mist"
     ) {
-      imageWeather.src = ".public/weather-img/drizzle.svg";
+      imageWeather.src = "/weather-img/drizzle.svg";
     } else if (dataWeather.weather[0].main == "Clouds") {
-      imageWeather.src = ".public/weather-img/cloudy.svg";
+      imageWeather.src = "/weather-img/cloudy.svg";
     }
 
     cityNameHTML.innerHTML = dataWeather.name;
