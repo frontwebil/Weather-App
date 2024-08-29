@@ -2,7 +2,7 @@ const MY_API_KEY = import.meta.env.VITE_API_KEY;
 console.log(MY_API_KEY);
 const startCity = "Poltava";
 
-import imgUrl from '/weather-img/sun.svg?url';
+import imgUrl from '/weather-img/sun.svg';
 console.log(imgUrl)
 
 const loader = document.getElementById("loader");
